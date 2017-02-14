@@ -2,8 +2,6 @@
 <project name="rqbuild" default="moveto">
 
 	<target name="moveto" depends="warfile">
-		<move file="index.html" todir="./project" />
-		<move file="Readme.md" todir="./project" />
 		<move file="randomQoute.jar" todir="./jarfolder" />
 		<move file="randomQoute.war" todir="./warfile" />
 		<move file="web.xml" todir="./web" />
