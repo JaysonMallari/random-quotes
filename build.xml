@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="rqbuild" default="moveto">
+
+	<target name="moveto" depends="warfile">
+		<move file="index.html" todir="./project" />
+		<move file="Readme.md" todir="./project" />
+		<move file="randomQoute.jar" todir="./jarfolder" />
+		<move file="randomQoute.war" todir="./warfile" />
+		<move file="web.xml" todir="./web" />
+	</target>
+
+	<target name="warfile" depends="makewebxml">
+	  <war destfile="randomQoute.war" webxml="./web.xml">
+		
+		<fileset dir="./index"  />
+		<lib dir="./project"  />
+		<classes dir="./web" />
+		
+	  </war>
+	</target>
+	
+	<target name="makewebxml" depends="jar">
+		<touch file="web.xml" />
+	</target>
+
+	<target name="jar" depends="makedir">
+		<jar destfile="randomQoute.jar" basedir="jarfolder" />
+	</target>
+	
+	<target name="makedir" depends="clean">
+		<mkdir dir="jarfolder" />
+		<mkdir dir="index" />
+		<mkdir dir="lib" />
+		<mkdir dir="web" />
+		<mkdir dir="project" />
+	</target>
+	
+	<target name="clean">
+		<delete dir="jarfolder" />
+		<delete dir="index" />
+		<delete dir="lib" />
+		<delete dir="web" />
+		<delete dir="project" />
+	</target>
+
+</project>
