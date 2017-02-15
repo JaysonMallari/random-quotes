@@ -4,6 +4,8 @@ html{
 
 body{
 	min-height: :100%;
+	background-color: #ddd;
+
 }
 
 header{
@@ -20,8 +22,18 @@ header{
 }
 
 .quoteBox{
+	padding-top:30px;
+	padding-left: 20px;
+	padding-right: 20px;
 	width: 100%;
 	height: 330px;
 	margin-bottom: 10px;
+	font-size: 1.8em;
 
+}
+
+.author{
+	margin-top: 20px;
+	padding-right:20px;
+	font-size: 0.8em;
 }
